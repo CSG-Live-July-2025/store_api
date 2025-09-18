@@ -6,11 +6,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-    products = Product.create(
-      name: params[:name],
-      price: params[:price]
+    product = Product.new(
+      title: params[:title],
+      price: params[:price],
+      description: params[:description]
     )
 
-    render json: products
+    if product.save
+      render json: product
+    else
+      render json: product.errors, status: :unprocessable_entity
+    end
   end
 end
