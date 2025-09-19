@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
       title: params[:title],
       price: params[:price],
       description: params[:description],
-      size: params[:size]
+      size: params[:size],
+      supplier_id: params[:supplier_id]
     )
 
     if product.save
