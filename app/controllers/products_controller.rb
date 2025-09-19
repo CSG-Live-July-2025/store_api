@@ -9,7 +9,8 @@ class ProductsController < ApplicationController
     product = Product.new(
       title: params[:title],
       price: params[:price],
-      description: params[:description]
+      description: params[:description],
+      size: params[:size]
     )
 
     if product.save
